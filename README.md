@@ -7,4 +7,4 @@
 3. Run `npm start` command for starting the server
 
 ## Screen
-![screen](assests/screen.png)
+![screen](/assests/screen.png)
