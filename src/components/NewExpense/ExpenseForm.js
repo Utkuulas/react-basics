@@ -71,20 +71,32 @@ const ExpenseForm = (props) => {
     //Prevents to page reloading
     event.preventDefault();
 
-    //Combining all data in an object
+    //Combining all expense data in an object
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
-      date: new Date(enteredDate)
+      date: new Date(enteredDate),
     };
-  }
+
+    props.onSaveExpenseData(expenseData);
+
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
+  };
 
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={(event) => {inputChangeHandler('title', event.target.value)}} />
+          <input
+            type="text"
+            value={enteredTitle}
+            onChange={(event) => {
+              inputChangeHandler("title", event.target.value);
+            }}
+          />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
@@ -92,7 +104,10 @@ const ExpenseForm = (props) => {
             type="number"
             min="0.01"
             step="0.01"
-            onChange={(event) => {inputChangeHandler('amount', event.target.value)}}
+            value={enteredAmount}
+            onChange={(event) => {
+              inputChangeHandler("amount", event.target.value);
+            }}
           />
         </div>
         <div className="new-expense__control">
@@ -101,7 +116,10 @@ const ExpenseForm = (props) => {
             type="date"
             min="2019-01-01"
             max="2022-12-31"
-            onChange={(event) => {inputChangeHandler('date', event.target.value)}}
+            value={enteredDate}
+            onChange={(event) => {
+              inputChangeHandler("date", event.target.value);
+            }}
           />
         </div>
       </div>
