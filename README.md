@@ -1,5 +1,8 @@
 # React Basics
-***This is an beginner React project that includes practising related to components.***
+***This is an beginner React project that includes practising related to following subjects.***
+- Components
+- States & Events
+- Rendering Lists
 
 ## Install
 1. Clone the repository
