@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Expenses/Expenses";
+import "./Expenses";
 
 import "./ExpensesFilter.css";
 
